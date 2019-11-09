@@ -1,7 +1,7 @@
-
 package menufinal;
 
-public class CLASEMENU {
+public class CLASEOPERACIONES {
+    
     public int numero1;
     public int numero2;
     public double resultado;
@@ -53,5 +53,5 @@ public class CLASEMENU {
          this.setnumero1(num1);
         this.setnumero2(num2); 
         return (double) getnumero1()/this.getnumero2();
-    }
+    }  
 }
