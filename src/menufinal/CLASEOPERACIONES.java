@@ -2,56 +2,42 @@ package menufinal;
 
 public class CLASEOPERACIONES {
     
-    public int numero1;
-    public int numero2;
-    public double resultado;
-  
+    public int suma(int numero1,int numero2){
+        
+    int resp = 0;
     
-    public int getnumero1() {
-        return numero1;
-    }
+    resp=numero1+numero2;
+    
+    return resp;
+}
 
-    public void setnumero1(int numero1) {
-        this.numero1 = numero1;
-    }
+public int resta(int numero1,int numero2){
+        
+    int resp = 0;
+    
+    resp=numero1-numero2;
+    
+    return resp;
+}
+
+public int multiplicar(int numero1,int numero2){
+        
+    int resp = 0;
+    
+    resp=numero1*numero2;
+    
+    return resp;
+}
  
-    public int getnumero2() {
-        return numero2;
-    }
-
-    public void setnumero2(int numero2) {
-        this.numero2 = numero2;
-    }
+public int dividir(int numero1,int numero2){
+        
+    int resp = 0;
     
-    public double getresultado() {
-        return resultado;
-    }
-
-    public void setresultado(double resultado) {
-        this.resultado = resultado;
-    }
+    resp=numero1/numero2;
     
-    public int Sumar(int numero1, int numero2){
-        this.setnumero1(numero1);
-        this.setnumero2(numero2); 
-        return this.getnumero1()+this.getnumero2();
-  }
-   
-   public int Restar(int num1, int num2){
-         this.setnumero1(num1);
-        this.setnumero2(num2); 
-        return this.getnumero1()-this.getnumero2();
-    }
-   
-   public int Multiplicar(int num1, int num2){
-         this.setnumero1(num1);
-        this.setnumero2(num2); 
-        return this.getnumero1()*this.getnumero2();
-    }
+    return resp;
+}
     
-   public double Division(int num1, int num2){
-         this.setnumero1(num1);
-        this.setnumero2(num2); 
-        return (double) getnumero1()/this.getnumero2();
-    }  
+    
+    
 }

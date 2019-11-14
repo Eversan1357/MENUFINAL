@@ -10,29 +10,28 @@ import javax.swing.JOptionPane;
 public class MENUFINAL {
 
     public static void main(String[] args) {
-     int op = 0;
-      int op1 = 0;
-      int op2 = 0;
-      int op3 = 0;
-      int op4 = 0;
-      int op5 = 0;
-      int op6 = 0;
-      int op7 = 0;
-      int op4_1 = 0;
-      int op4_2 = 0;
+      int OPCION = 0;
+      int OPCION1 = 0;
+      int OPCION2 = 0;
+      int OPCION3 = 0;
+      int OPCION4 = 0;
+      int OPCION5 = 0;
+      int OPCION6 = 0;
+      int OPCION7 = 0;
+      int OPCION4_1 = 0;
+      int OPCION4_2 = 0;
+     
       
+      int numero1 = 0;
+      int numero2 = 0;
       
-      
-      int sumar = 0;
-      int numero1;
-      int numero2;
       CLASEOPERACIONES obj = new CLASEOPERACIONES ();
-                
+      CLASEARREGLOS OBJ = new CLASEARREGLOS ();     
            
         do{  
           try{  
             
-                op = Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor de la operacion que quiere realizar"
+                OPCION = Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor de la operacion que quiere realizar"
                     + "\n 1.  OPERACIONES"
                     + "\n 2.  ARREGLOS"
                     + "\n 3.  MATRICES"
@@ -47,11 +46,11 @@ public class MENUFINAL {
            }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
           
           
-            switch(op){
+            switch(OPCION){
                 case 1: 
                 do{ 
                    try{ 
-                           op1 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                           OPCION1 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n 1.  SUMA"
                            + "\n 2.  RESTA"
                            + "\n 3.  MULTIPLICACION"
@@ -60,46 +59,48 @@ public class MENUFINAL {
                     }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
                     
-                    switch(op1){
+                    switch(OPCION1){
                      case 1:
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                        
+                        System.out.print("la respuesta es :"+obj.suma(numero1,numero2));                       
                     break;
                      case 2:
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
+                        System.out.print("\n la respuesta es :"+obj.resta(numero1,numero2));
                     break;
                     case 3:    
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
+                        System.out.print("\n la respuesta es :"+obj.multiplicar(numero1,numero2));
                     break;
                     case 4:
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
+                        System.out.print("\n la respuesta es :"+obj.dividir(numero1,numero2));
                     break;
                     case 5:
                         JOptionPane.showMessageDialog(null, "ATRAS");
                     break;
                     default:
-                        numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
-                        numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                   break;   
+                     JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");   
+                    break;   
                     }
                     
-                }while(op1 != 5);    
+                }while(OPCION1 != 5);    
                 
                     break;
                 case 2:
                     do{ 
                       try{ 
-                          op2 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION2 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  CARGAR DATOS"
                            + "\n B.  MOSTRAR DATOS"
                            + "\n C.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op2){
+                   switch(OPCION2){
                         case 1:
                         break;
                         case 2:
@@ -110,7 +111,7 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op2 != 3);    
+                   }while(OPCION2 != 3);    
                
                     break;
                     
@@ -118,13 +119,13 @@ public class MENUFINAL {
                 JOptionPane.showMessageDialog(null, "MATRICES");
                 do{ 
                       try{ 
-                          op3 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION3 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  CARGAR DATOS"
                            + "\n B.  MOSTRAR DATOS"
                            + "\n C.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op3){
+                   switch(OPCION3){
                         case 1:
                         break;
                         case 2:
@@ -135,7 +136,7 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op3 != 3);    
+                   }while(OPCION != 3);    
                
                     break;
                     
@@ -143,13 +144,13 @@ public class MENUFINAL {
                 JOptionPane.showMessageDialog(null, "ORDENAMINETOS");
                 do{ 
                       try{ 
-                          op4 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION4 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  METODO BURBUJA"
                            + "\n B.  METODO SHELL"
                            + "\n C.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op4){
+                   switch(OPCION4){
                         case 1:
                             JOptionPane.showMessageDialog(null, "LISTAS");
                     Scanner entrada = new Scanner(System.in);
@@ -188,7 +189,7 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op4 != 3);    
+                   }while(OPCION4 != 3);    
                
                     break;
                     
@@ -196,14 +197,14 @@ public class MENUFINAL {
                     JOptionPane.showMessageDialog(null, "LISTAS");
                      do{ 
                       try{ 
-                          op5 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION5 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATOS"
                            + "\n B.  MOSTAR LISTA"
                            + "\n C.  LIMPIAR LISTA"       
                            + "\n D.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op5){
+                   switch(OPCION5){
                         case 1:
                         break;
                         case 2:
@@ -216,14 +217,14 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op5 != 4);    
+                   }while(OPCION5 != 4);    
                
                     break;  
                 case 6:
                     JOptionPane.showMessageDialog(null, "PILAS");
                     do{ 
                       try{ 
-                          op6 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION6 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATO"
                            + "\n B.  MOSTAR LA CIMA"
                            + "\n C.  SACAR DATO DE LA CIMA" 
@@ -231,7 +232,7 @@ public class MENUFINAL {
                            + "\n E.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op6){
+                   switch(OPCION6){
                         case 1:
                         break;
                         case 2:
@@ -246,14 +247,14 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op6 != 5);    
+                   }while(OPCION6 != 5);    
                     break;   
                     
                 case 7:
                     JOptionPane.showMessageDialog(null, "COLAS");
                     do{ 
                       try{ 
-                          op7 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          OPCION7 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATO"
                            + "\n B.  MOSTAR DATO"
                            + "\n C.  SACAR DATO" 
@@ -261,7 +262,7 @@ public class MENUFINAL {
                            + "\n E.  SALIR"));
                        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
                     
-                   switch(op7){
+                   switch(OPCION7){
                         case 1:
                         break;
                         case 2:
@@ -276,7 +277,7 @@ public class MENUFINAL {
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                         break;   
                      }
-                   }while(op7 != 5);    
+                   }while(OPCION7 != 5);    
                     break; 
                     
                 case 8:
@@ -295,6 +296,6 @@ public class MENUFINAL {
                     JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
                    break;   
           }     
-        }while(op != 10);    
+        }while(OPCION != 10);    
     }
 }
