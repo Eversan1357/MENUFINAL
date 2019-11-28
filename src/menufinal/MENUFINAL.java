@@ -18,16 +18,10 @@ public class MENUFINAL {
       String OPCION4_1;
       String OPCION4_2;
      
-      
-      int numero1 ;
-      int numero2 ;
-     
       Scanner entrada = new Scanner(System.in);
       
-      
-
-      
       CLASEOPERACIONES obj = new CLASEOPERACIONES (); 
+      CLASEARREGLO obl = new CLASEARREGLO();
       CLASEMATRIZ obk = new CLASEMATRIZ();
            
         do{  
@@ -50,123 +44,13 @@ public class MENUFINAL {
           
             switch(OPCION){
                 case 1:        
-                           JOptionPane.showInputDialog("elija la operacion"
-                           + "\n A.  SUMA"
-                           + "\n B.  RESTA"
-                           + "\n C.  MULTIPLICACION"
-                           + "\n D.  DIVISION"
-                           + "\n E.  SALIR");
-                           
-                          OPCION1 = entrada.next();
-                        
-                    switch(OPCION1){
-                     case "A":
-                        numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
-                        numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                        System.out.print("la respuesta es :"+obj.suma(numero1,numero2));                       
-                    break;
-                     case "B":
-                        numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
-                        numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                        System.out.print("\n la respuesta es :"+obj.resta(numero1,numero2));
-                    break;
-                    case "C":    
-                        numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
-                        numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                        System.out.print("\n la respuesta es :"+obj.multiplicar(numero1,numero2));
-                    break;
-                    case "D":
-                        numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
-                        numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
-                        System.out.print("\n la respuesta es :"+obj.dividir(numero1,numero2));
-                    break;
-                    case "E":
-                        JOptionPane.showMessageDialog(null, "ATRAS");
-                    break;
-                     default:
-                     JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");   
-                     break;}
+                    obj.OPCION1();     
                    break;
                 case 2:
-                          JOptionPane.showInputDialog("elija la operacion"
-                           + "\n A.  CARGAR DATOS"
-                           + "\n B.  MOSTRAR DATOS"
-                           + "\n C.  SALIR");   
-                          
-                          OPCION2 = entrada.next();
-                          
-                   switch(OPCION2){
-                        case "A":                          
-                         int arre[];
-                         int ca;           
-                         
-                         ca = Integer.parseInt(JOptionPane.showInputDialog("digite la cantidad de elemtos"));
-                         arre = new int[ca];  
-                         0
-                         System.out.print("la respuesta es :"+obk.cargardatos);  
-                                    
-                       break;
-                        case "B":
-                                                 
-                         ca = Integer.parseInt(JOptionPane.showInputDialog("digite la cantidad de elemtos"));
-                         arre = new int[ca];
-                         
-                         System.out.print("la respuesta es :"+obk.mostraratos);   
-                            
-                            
-                        break;
-                        case "c": 
-                            JOptionPane.showMessageDialog(null, "SALIR");
-                        break;
-                       default:
-                        JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;}              
-                   break;
-                    
+                    obl.OPCION2();                 
+                   break;                   
                 case 3:
-                JOptionPane.showMessageDialog(null, "MATRICES"); 
-                          JOptionPane.showInputDialog("elija la operacion"
-                           + "\n A.  CARGAR DATOS"
-                           + "\n B.  MOSTRAR DATOS"
-                           + "\n C.  SALIR"); 
-                          
-                          OPCION3 = entrada.next();
-                          
-                   switch(OPCION3){
-                        case "A":
-                            int matriz [][];
-                            int nf,nc;
-                            
-                            nf = Integer.parseInt(JOptionPane.showInputDialog("digite el numero de filas :"));
-                            nc = Integer.parseInt(JOptionPane.showInputDialog("digite el numero de columnas:"));
-                            matriz = new int [nf][nc];
-                            
-                            System.out.println("Digitela matriz");
-                            
-                            for(int y=0; y<nf;y++){ 
-                               for(int k=0; k<nc;k++){ 
-                                   System.out.print("Matriz["+y+"]["+k+"] : ");
-                                   matriz[y][k] = entrada.nextInt();
-                                }                                        
-                            }  
-                            
-                            System.out.println("\n La matriz es : ");
-                            for(int y=0; y<nf;y++){ 
-                               for(int k=0; k<nc;k++){ 
-                                   System.out.print(matriz[y][k]);
-                                   matriz[y][k] = entrada.nextInt();
-                                } 
-                                System.out.println("");
-                            }           
-                        break;
-                        case "D":  
-                        break;
-                        case "c":
-                            JOptionPane.showMessageDialog(null, "SALIR");
-                        break;
-                       default:
-                        JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;}               
+                       
                     break;
                     
                 case 4:
