@@ -1,8 +1,5 @@
 package menufinal;
 
-
-
-
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -11,22 +8,27 @@ public class MENUFINAL {
 
     public static void main(String[] args) {
       int OPCION = 0;
-      int OPCION1 = 0;
-      int OPCION2 = 0;
-      int OPCION3 = 0;
-      int OPCION4 = 0;
-      int OPCION5 = 0;
-      int OPCION6 = 0;
-      int OPCION7 = 0;
-      int OPCION4_1 = 0;
-      int OPCION4_2 = 0;
+      String OPCION1;
+      String OPCION2;
+      String OPCION3;
+      String OPCION4;
+      String OPCION5;
+      String OPCION6;
+      String OPCION7;
+      String OPCION4_1;
+      String OPCION4_2;
      
       
-      int numero1 = 0;
-      int numero2 = 0;
+      int numero1 ;
+      int numero2 ;
+     
+      Scanner entrada = new Scanner(System.in);
       
-      CLASEOPERACIONES obj = new CLASEOPERACIONES ();
-      CLASEARREGLOS OBJ = new CLASEARREGLOS ();     
+      
+
+      
+      CLASEOPERACIONES obj = new CLASEOPERACIONES (); 
+      CLASEMATRIZ obk = new CLASEMATRIZ();
            
         do{  
           try{  
@@ -47,237 +49,267 @@ public class MENUFINAL {
           
           
             switch(OPCION){
-                case 1: 
-                do{ 
-                   try{ 
-                           OPCION1 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
-                           + "\n 1.  SUMA"
-                           + "\n 2.  RESTA"
-                           + "\n 3.  MULTIPLICACION"
-                           + "\n 4.  DIVISION"
-                           + "\n 5.  SALIR"));
-                    }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
-                    
+                case 1:        
+                           JOptionPane.showInputDialog("elija la operacion"
+                           + "\n A.  SUMA"
+                           + "\n B.  RESTA"
+                           + "\n C.  MULTIPLICACION"
+                           + "\n D.  DIVISION"
+                           + "\n E.  SALIR");
+                           
+                          OPCION1 = entrada.next();
+                        
                     switch(OPCION1){
-                     case 1:
+                     case "A":
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
                         System.out.print("la respuesta es :"+obj.suma(numero1,numero2));                       
                     break;
-                     case 2:
+                     case "B":
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
                         System.out.print("\n la respuesta es :"+obj.resta(numero1,numero2));
                     break;
-                    case 3:    
+                    case "C":    
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
                         System.out.print("\n la respuesta es :"+obj.multiplicar(numero1,numero2));
                     break;
-                    case 4:
+                    case "D":
                         numero1=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del primer numero"));
                         numero2=Integer.parseInt(JOptionPane.showInputDialog("ingrese el valor del segundo numero"));
                         System.out.print("\n la respuesta es :"+obj.dividir(numero1,numero2));
                     break;
-                    case 5:
+                    case "E":
                         JOptionPane.showMessageDialog(null, "ATRAS");
                     break;
-                    default:
+                     default:
                      JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");   
-                    break;   
-                    }
-                    
-                }while(OPCION1 != 5);    
-                
-                    break;
+                     break;}
+                   break;
                 case 2:
-                    do{ 
-                      try{ 
-                          OPCION2 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  CARGAR DATOS"
                            + "\n B.  MOSTRAR DATOS"
-                           + "\n C.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n C.  SALIR");   
+                          
+                          OPCION2 = entrada.next();
+                          
                    switch(OPCION2){
-                        case 1:
+                        case "A":                          
+                         int arre[];
+                         int ca;           
+                         
+                         ca = Integer.parseInt(JOptionPane.showInputDialog("digite la cantidad de elemtos"));
+                         arre = new int[ca];  
+                         0
+                         System.out.print("la respuesta es :"+obk.cargardatos);  
+                                    
+                       break;
+                        case "B":
+                                                 
+                         ca = Integer.parseInt(JOptionPane.showInputDialog("digite la cantidad de elemtos"));
+                         arre = new int[ca];
+                         
+                         System.out.print("la respuesta es :"+obk.mostraratos);   
+                            
+                            
                         break;
-                        case 2:
-                        break;
-                        case 3:    
+                        case "c": 
+                            JOptionPane.showMessageDialog(null, "SALIR");
                         break;
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION2 != 3);    
-               
-                    break;
+                        break;}              
+                   break;
                     
                 case 3:
-                JOptionPane.showMessageDialog(null, "MATRICES");
-                do{ 
-                      try{ 
-                          OPCION3 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                JOptionPane.showMessageDialog(null, "MATRICES"); 
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  CARGAR DATOS"
                            + "\n B.  MOSTRAR DATOS"
-                           + "\n C.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n C.  SALIR"); 
+                          
+                          OPCION3 = entrada.next();
+                          
                    switch(OPCION3){
-                        case 1:
+                        case "A":
+                            int matriz [][];
+                            int nf,nc;
+                            
+                            nf = Integer.parseInt(JOptionPane.showInputDialog("digite el numero de filas :"));
+                            nc = Integer.parseInt(JOptionPane.showInputDialog("digite el numero de columnas:"));
+                            matriz = new int [nf][nc];
+                            
+                            System.out.println("Digitela matriz");
+                            
+                            for(int y=0; y<nf;y++){ 
+                               for(int k=0; k<nc;k++){ 
+                                   System.out.print("Matriz["+y+"]["+k+"] : ");
+                                   matriz[y][k] = entrada.nextInt();
+                                }                                        
+                            }  
+                            
+                            System.out.println("\n La matriz es : ");
+                            for(int y=0; y<nf;y++){ 
+                               for(int k=0; k<nc;k++){ 
+                                   System.out.print(matriz[y][k]);
+                                   matriz[y][k] = entrada.nextInt();
+                                } 
+                                System.out.println("");
+                            }           
                         break;
-                        case 2:
+                        case "D":  
                         break;
-                        case 3:    
+                        case "c":
+                            JOptionPane.showMessageDialog(null, "SALIR");
                         break;
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION != 3);    
-               
+                        break;}               
                     break;
                     
                 case 4:
-                JOptionPane.showMessageDialog(null, "ORDENAMINETOS");
-                do{ 
-                      try{ 
-                          OPCION4 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                JOptionPane.showMessageDialog(null, "ORDENAMINETOS");             
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  METODO BURBUJA"
                            + "\n B.  METODO SHELL"
-                           + "\n C.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n C.  SALIR");  
+                          
+                          OPCION4= entrada.next();
+                          
                    switch(OPCION4){
-                        case 1:
-                            JOptionPane.showMessageDialog(null, "LISTAS");
-                    Scanner entrada = new Scanner(System.in);
-                    int arreglo[],nElementos;
-                    int aux;
-        
-                    nElementos = Integer.parseInt(JOptionPane.showInputDialog("digite la cantidad de elemtos"));
-        
-                    arreglo = new int[nElementos];
-        
-                   for(int i=0;i<nElementos;i++){
-                    System.out.print((i+1)+".digite un numero");
-                    arreglo[i] = entrada.nextInt();
-                    }
-        
-                    for(int i=0;i<(nElementos-1);i++){
-                     for(int j=0;j<(nElementos-1);j++){
-                      if(arreglo[j] > arreglo[j+1]){
-                        aux = arreglo[j];
-                        arreglo[j] = arreglo[j+1];
-                        arreglo[j+1] = aux;  
-                        }
-                       }
-                      }
-        
-                      System.out.println("\nArreglo ordenado en forma creciente:");
-                     for(int i=0;i<nElementos;i++){
-                      System.out.print(arreglo[i]+" - ");
-                      }
+                        case "A":
+                               JOptionPane.showInputDialog("elija la operacion"
+                               + "\n a.  CARGAR DATOS"
+                               + "\n b.  MOSTRAR DATOS"
+                               + "\n c.  SALIR"); 
+                          
+                                OPCION4_1 = entrada.next();
+                          
+                                switch(OPCION4_1){
+                                    case "a":                 
+                                    break;
+                                    case "b":  
+                                    break;
+                                    case "c":
+                                   JOptionPane.showMessageDialog(null, "SALIR");
+                                     break;
+                                   default:
+                                  JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
+                                    break;}      
+                                    break;
+                                    
+                        case "B":
+                            JOptionPane.showInputDialog("elija la operacion"
+                               + "\n a.  CARGAR DATOS"
+                               + "\n b.  MOSTRAR DATOS"
+                               + "\n c.  SALIR"); 
+                          
+                                OPCION4_2 = entrada.next();
+                          
+                                switch(OPCION4_2){
+                                    case "a":                 
+                                    break;
+                                    case "b":  
+                                    break;
+                                    case "c":
+                                   JOptionPane.showMessageDialog(null, "SALIR");
+                                     break;
+                                   default:
+                                  JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
+                                    break;}      
+                            
+                            
                         break;
-                        case 2:
+                        
+                        case "C": 
+                            JOptionPane.showMessageDialog(null, "SALIR");
                         break;
-                        case 3:    
-                        break;
+                        
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION4 != 3);    
-               
+                        break;} 
                     break;
-                    
                 case 5:
-                    JOptionPane.showMessageDialog(null, "LISTAS");
-                     do{ 
-                      try{ 
-                          OPCION5 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                    JOptionPane.showMessageDialog(null, "LISTAS"); 
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATOS"
                            + "\n B.  MOSTAR LISTA"
                            + "\n C.  LIMPIAR LISTA"       
-                           + "\n D.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n D.  SALIR");
+                          
+                          OPCION5 = entrada.next();
+                          
                    switch(OPCION5){
-                        case 1:
+                        case "A":
+                       
+                            
                         break;
-                        case 2:
+                        case "B":
                         break;
-                        case 3:    
+                        case "C":    
                         break;
-                        case 4:    
+                        case "D":    
                         break;
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION5 != 4);    
-               
+                        break;}                           
                     break;  
                 case 6:
                     JOptionPane.showMessageDialog(null, "PILAS");
-                    do{ 
-                      try{ 
-                          OPCION6 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATO"
                            + "\n B.  MOSTAR LA CIMA"
                            + "\n C.  SACAR DATO DE LA CIMA" 
                            + "\n D.  LIMPIAR LISTA"       
-                           + "\n E.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n E.  SALIR"); 
+                          
+                          OPCION6 = entrada.next();
+                          
                    switch(OPCION6){
-                        case 1:
+                        case "A":
                         break;
-                        case 2:
+                        case "B":
                         break;
-                        case 3:    
+                        case "C":    
                         break;
-                        case 4:    
+                        case "D":    
                         break;
-                        case 5:    
+                        case "E":    
                         break;
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION6 != 5);    
-                    break;   
+                        break;}   
+                    break;  
+                    
                     
                 case 7:
-                    JOptionPane.showMessageDialog(null, "COLAS");
-                    do{ 
-                      try{ 
-                          OPCION7 = Integer.parseInt(JOptionPane.showInputDialog("elija la operacion"
+                    JOptionPane.showMessageDialog(null, "COLAS");                   
+                          JOptionPane.showInputDialog("elija la operacion"
                            + "\n A.  INSERTAR DATO"
                            + "\n B.  MOSTAR DATO"
                            + "\n C.  SACAR DATO" 
                            + "\n D.  LIMPIAR COLA"       
-                           + "\n E.  SALIR"));
-                       }catch(Exception ex){JOptionPane.showMessageDialog(null,"Debe ingresar solo  valores numericos"); }
-                    
+                           + "\n E.  SALIR");
+                          
+                          OPCION7 = entrada.next();
+                          
                    switch(OPCION7){
-                        case 1:
+                       
+                        case "A":
                         break;
-                        case 2:
+                        case "B":
                         break;
-                        case 3:    
+                        case "C":    
                         break;
-                        case 4:    
+                        case "D":    
                         break;
-                        case 5:    
+                        case "E":    
                         break;
                        default:
                         JOptionPane.showMessageDialog(null, "!INGRESO UNA OPCION NO VALIDA¡");
-                        break;   
-                     }
-                   }while(OPCION7 != 5);    
+                        break;}  
                     break; 
                     
                 case 8:
@@ -298,4 +330,6 @@ public class MENUFINAL {
           }     
         }while(OPCION != 10);    
     }
-}
+   }
+
+
